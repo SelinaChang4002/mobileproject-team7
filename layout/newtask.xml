@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="6dp"
+    app:cardBackgroundColor="#0C073A"
+    android:layout_margin="8dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:padding="12dp">
+
+        <!-- Date -->
+        <LinearLayout
+            android:layout_width="57dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="0.1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/day"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:alpha="0.6"
+                android:text="Fri"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="30"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/month"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:alpha="0.6"
+                android:text="Nov"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <!-- Divider -->
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent"
+            android:alpha="0.3"
+            android:background="#FFFFFF"/>
+
+        <!-- Info -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginStart="8dp"
+            android:paddingStart="8dp">
+
+            <TextView
+                android:id="@+id/task_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Task Title"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                android:singleLine="true"
+                android:layout_marginBottom="8dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/task_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Task description goes here."
+                android:textColor="#B0BEC5"
+                android:textSize="14sp"
+                android:singleLine="true"
+                android:layout_marginBottom="8dp"/>
+
+            <TextView
+                android:id="@+id/task_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="15:00"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:layout_marginBottom="8dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/task_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Completed"
+                android:textColor="#2ECC71"
+                android:textSize="14sp"
+                android:layout_gravity="end"
+                android:layout_marginTop="10dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"/>
+
+            <!-- Tags -->
+            <LinearLayout
+                android:id="@+id/tags_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="8dp"
+                android:gravity="start">
+
+                <TextView
+                    android:id="@+id/tag1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Work"
+                    android:textColor="#FFFFFF"
+                    android:background="#FF7043"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
+                    android:layout_marginEnd="4dp"
+                    android:textSize="12sp"
+                    android:layout_gravity="center_vertical"/>
+
+                <TextView
+                    android:id="@+id/tag2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Urgent"
+                    android:textColor="#FFFFFF"
+                    android:background="#FFCA28"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
+                    android:layout_marginEnd="4dp"
+                    android:textSize="12sp"
+                    android:layout_gravity="center_vertical"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
