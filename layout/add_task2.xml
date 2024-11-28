@@ -13,25 +13,17 @@
         android:paddingBottom="50dp"
         android:orientation="vertical">
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="20dp"
-            android:scaleType="centerCrop" />
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="20dp"
-            android:text="Add a task"
+            android:text="New task"
             android:textColor="@android:color/black"
             android:textSize="22sp"
             tools:ignore="MissingPrefix" />
 
         <TextView
-            fontPath="fonts/nunito_light.ttf"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
