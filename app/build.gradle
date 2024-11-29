@@ -3,6 +3,8 @@ plugins {
 }
 
 android {
+    namespace "com.example.plannerapp"
+    compileSdkVersion 34  // 이 줄을 추가
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_17
         targetCompatibility JavaVersion.VERSION_17

@@ -3,6 +3,9 @@ package com.example.plannerapp.repository;
 import com.example.plannerapp.model.ToDoItem;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Iterator;  // Iterator를 위한 import
+import com.example.plannerapp.model.ToDoItem;  // ToDo 클래스를 위한 import (경로는 실제 ToDo 클래스 위치에 따라 다를 수 있습니다)
+
 
 // 할 일 데이터를 관리하는 Repository 클래스
 public class ToDoRepository {
@@ -36,7 +39,14 @@ public class ToDoRepository {
 
     // 할 일 삭제
     public void deleteToDo(int id) {
-        toDoList.removeIf(item -> item.getId() == id);
+    // 수정된 코드
+    Iterator<ToDoItem> iterator = toDoList.iterator();
+    while (iterator.hasNext()) {
+        if (iterator.next().getId() == id) {
+            iterator.remove();
+            break;
+    }
+}
     }
 
     // 총 시간 계산
