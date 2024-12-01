@@ -1,18 +1,229 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <!-- 탭 레이아웃 -->
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_gravity="top"
+        app:tabMode="fixed"
+        app:tabGravity="fill" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- ViewPager -->
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/tabLayout" />
+
+    <LinearLayout
+        android:id="@+id/todoFragmentLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/hi"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:textSize="28sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/let_s_manage_your_tasks"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/noDataImage"
+                android:layout_width="300dp"
+                android:layout_height="300dp"
+                android:layout_gravity="center"
+                android:contentDescription="@string/todo" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/taskRecycler"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </FrameLayout>
+
+        <Button
+            android:id="@+id/addTask"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/add_task"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="20dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/memoFragmentLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <EditText
+            android:id="@+id/editTextMemo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/write_memo"
+            android:background="@drawable/edit_text_background"
+            android:padding="10dp"
+            android:autofillHints=""
+            android:inputType="textMultiLine" />
+
+        <Button
+            android:id="@+id/button_save_memo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/save_memo"
+            android:layout_gravity="center" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/affirmationFragmentLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <EditText
+            android:id="@+id/editTextAffirmation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/Write_promise"
+            android:background="@drawable/edit_text_background"
+            android:padding="10dp"
+            android:autofillHints=""
+            android:inputType="textMultiLine" />
+
+        <Button
+            android:id="@+id/button_save_affirmation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/save_affirmation"
+            android:layout_gravity="center" />
+    </LinearLayout>
+
+    <!-- 일기 및 작업 입력 영역 추가 -->
+    <LinearLayout
+        android:id="@+id/diaryAndTaskInputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <!-- 일기 입력 -->
+        <EditText
+            android:id="@+id/diary_entry_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:background="@android:color/darker_gray"
+            android:hint="@string/WriteDiary"
+            android:inputType="textMultiLine"
+            android:minHeight="48dp"
+            android:padding="10dp"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#4E342E" />
+
+        <Button
+            android:id="@+id/save_diary_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/SaveDiary" />
+
+        <LinearLayout
+            android:id="@+id/diary_entry_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="20dp" />
+
+        <!-- 작업 입력 -->
+        <EditText
+            android:id="@+id/task_title_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:background="@android:color/darker_gray"
+            android:hint="@string/TaskTitle"
+            android:inputType="textMultiLine"
+            android:minHeight="48dp"
+            android:padding="10dp"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#4E342E" />
+
+        <EditText
+            android:id="@+id/task_description_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:background="@android:color/darker_gray"
+            android:hint="@string/task_description"
+            android:inputType="textMultiLine"
+            android:minHeight="48dp"
+            android:padding="10dp"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#4E342E" />
+
+        <EditText
+            android:id="@+id/task_time_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:background="@android:color/darker_gray"
+            android:hint="@string/TaskTime"
+            android:inputType="textMultiLine"
+            android:minHeight="48dp"
+            android:padding="10dp"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#4E342E" />
+
+        <EditText
+            android:id="@+id/task_status_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:background="@android:color/darker_gray"
+            android:hint="@string/task_status"
+            android:inputType="textMultiLine"
+            android:minHeight="48dp"
+            android:padding="10dp"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#4E342E" />
+
+        <Button
+            android:id="@+id/save_task_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/save_task" />
+
+        <LinearLayout
+            android:id="@+id/task_entry_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="20dp" />
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

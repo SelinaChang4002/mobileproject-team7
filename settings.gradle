@@ -1,12 +1,10 @@
 pluginManagement {
     repositories {
         gradlePluginPortal()
-        mavenCentral()
         google()
         mavenCentral()
     }
 }
-/*
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
@@ -14,14 +12,5 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-*/
-dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
-    repositories {
-        google()
-        mavenCentral()
-    }
-}
-
-rootProject.name = "PlannerApp"
+rootProject.name = "IntegrateCode"
 include ':app'

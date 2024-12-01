@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <EditText
+            android:id="@+id/diary_entry_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:background="@android:color/darker_gray"
+            android:hint="@string/write_your_diary_entry_here"
+            android:inputType="Write diary"
+            android:minHeight="48dp"
+            android:padding="10dp"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#4E342E"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/save_diary_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/save_entry"
+            android:layout_marginTop="10dp" />
+
+        <LinearLayout
+            android:id="@+id/diary_entry_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="20dp" />
+    </LinearLayout>
+</ScrollView>
